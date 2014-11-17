@@ -16,7 +16,9 @@ import java.util.Date;
 public class Invoice {
     
     private Date dueDate;
+    private Date creationDate;
     private IvoiceTotals invoiceTotals;
     private Order order;
+    private Long id;
 
 }
