@@ -20,7 +20,6 @@ public class OrderItem {
     int discount;
     
     // zamowiony produkt
-    //TODO zmienic na plyte chodnikowa
     Sett product;
 
     public int getAmount() {
