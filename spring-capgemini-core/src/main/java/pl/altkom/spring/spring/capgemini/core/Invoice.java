@@ -6,7 +6,7 @@
 
 package pl.altkom.spring.spring.capgemini.core;
 
-import org.joda.time.LocalDate;
+import java.util.Date;
 
 
 /**
@@ -15,7 +15,8 @@ import org.joda.time.LocalDate;
  */
 public class Invoice {
     
-    private LocalDate dueDate;
+    private Date dueDate;
     private IvoiceTotals invoiceTotals;
+    private Order order;
 
 }

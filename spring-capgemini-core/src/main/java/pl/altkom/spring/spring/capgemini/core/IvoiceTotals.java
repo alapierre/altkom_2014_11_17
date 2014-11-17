@@ -11,8 +11,18 @@ package pl.altkom.spring.spring.capgemini.core;
  * @author kursant1
  */
 class IvoiceTotals {
-    
+    /**
+     * Wartosc faktury netto
+     */
     private Double totalNettoAmount;
+    
+    /**
+     * Wartosc faktury brutto
+     */
     private Double totalBruttoAmount;
+    
+    /**
+     * Wartosc rabatu
+     */
     private Double totalDiscountAmount;
 }
