@@ -23,6 +23,8 @@ public class Product {
     private BigDecimal heightCm;
     private BigDecimal lengthCm;
     private BigDecimal cost;
+    private BigDecimal tax;
+    private String currency;
     private Supplier supplier;
 
     public Long getId() {
@@ -103,6 +105,22 @@ public class Product {
 
     public void setSupplier(Supplier supplier) {
         this.supplier = supplier;
+    }
+
+    public BigDecimal getTax() {
+        return tax;
+    }
+
+    public void setTax(BigDecimal tax) {
+        this.tax = tax;
+    }
+
+    public String getCurrency() {
+        return currency;
+    }
+
+    public void setCurrency(String currency) {
+        this.currency = currency;
     }
     
 }
