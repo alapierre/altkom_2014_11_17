@@ -92,6 +92,11 @@
                 <version>5.0.3.Final</version>
             </dependency>
         
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>2.5</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     
