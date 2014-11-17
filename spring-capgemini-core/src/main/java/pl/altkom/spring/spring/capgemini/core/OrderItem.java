@@ -21,7 +21,7 @@ public class OrderItem {
     
     // zamowiony produkt
     //TODO zmienic na plyte chodnikowa
-    Object product;
+    Sett product;
 
     public int getAmount() {
         return amount;
@@ -39,11 +39,11 @@ public class OrderItem {
         this.discount = discount;
     }
 
-    public Object getProduct() {
+    public Sett getProduct() {
         return product;
     }
 
-    public void setProduct(Object product) {
+    public void setProduct(Sett product) {
         this.product = product;
     }
     
