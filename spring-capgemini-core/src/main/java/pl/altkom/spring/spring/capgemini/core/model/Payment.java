@@ -13,17 +13,17 @@ import java.util.Date;
  * @author kursant8
  */
 public class Payment {
-    Long id;
-    Date paymentDate;
-    Date paymentDue;
-    Double amount;
-    Double paid;
-    String paymentMethod;   
-    Long customerId;
-    String customerDescription;
-    Long invoiceId;  
-    String invoiceDescription;
-    String description;
+    private Long id;
+    private Date paymentDate;
+    private Date paymentDue;
+    private Double amount;
+    private Double paid;
+    private String paymentMethod;   
+    private Long customerId;
+    private String customerDescription;
+    private Long invoiceId;  
+    private String invoiceDescription;
+    private String description;
 
     public Long getId() {
         return id;
