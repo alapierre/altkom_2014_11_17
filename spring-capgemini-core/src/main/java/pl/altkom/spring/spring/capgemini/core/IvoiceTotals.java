@@ -8,7 +8,7 @@ package pl.altkom.spring.spring.capgemini.core;
 
 /**
  *
- * @author kursant1
+ * @author Janusz Taterka
  */
 class IvoiceTotals {
     /**
