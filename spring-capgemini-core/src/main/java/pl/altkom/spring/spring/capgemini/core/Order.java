@@ -17,9 +17,14 @@ public class Order {
     private List<OrderItem> orderList;
     private Address adres;
     private Customer customer;
+    private Invoice invoice;
     private User user;
+    private Shipment shipment;
     private List<Supplier> suplierList;
 
+    public void setInvoice(Invoice invoice) {
+        this.invoice = invoice;
+    }
 
     public void addOrderItem(OrderItem item)
     {
@@ -31,6 +36,19 @@ public class Order {
         suplierList.add(item);
     }
 
+    public void setOrderList(List<OrderItem> orderList) {
+        this.orderList = orderList;
+    }
+
+    public void setShipment(Shipment shipment) {
+        this.shipment = shipment;
+    }
+
+    public void setSuplierList(List<Supplier> suplierList) {
+        this.suplierList = suplierList;
+    }
+    
+    
     public void setUser(User user) {
         this.user = user;
     }
@@ -59,7 +77,17 @@ public class Order {
         return suplierList;
     }
     
-    
+        public User getUser() {
+        return user;
+    }
+
+    public Shipment getShipment() {
+        return shipment;
+    }
+
+    public Invoice getInvoice() {
+        return invoice;
+    }
     
     
     
