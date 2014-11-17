@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package pl.altkom.spring.spring.capgemini.core;
+package pl.altkom.spring.spring.capgemini.core.model;
 
 /**
  *
