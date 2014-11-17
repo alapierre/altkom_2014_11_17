@@ -20,7 +20,7 @@ public class OrderItem {
     int discount;
     
     // zamowiony produkt
-    Sett product;
+    Product product;
 
     public int getAmount() {
         return amount;
@@ -38,11 +38,11 @@ public class OrderItem {
         this.discount = discount;
     }
 
-    public Sett getProduct() {
+    public Product getProduct() {
         return product;
     }
 
-    public void setProduct(Sett product) {
+    public void setProduct(Product product) {
         this.product = product;
     }
     
