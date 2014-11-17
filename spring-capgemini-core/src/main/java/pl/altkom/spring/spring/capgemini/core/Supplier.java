@@ -5,15 +5,20 @@ package pl.altkom.spring.spring.capgemini.core;
  * @author kursant7
  */
 public class Supplier {
-    
+
     private Long id;
-    
+
     private String name;
-    
+
     // TODO: change to type Address
     private String address;
-    
+
     private String vatIdentificationNumber;
+
+    /**
+     * Number of days to pay invoice.
+     */
+    private int paymentDeadline;
 
     public Long getId() {
         return id;
@@ -46,5 +51,13 @@ public class Supplier {
     public void setVatIdentificationNumber(String vatIdentificationNumber) {
         this.vatIdentificationNumber = vatIdentificationNumber;
     }
-    
+
+    public int getPaymentDeadline() {
+        return paymentDeadline;
+    }
+
+    public void setPaymentDeadline(int paymentDeadline) {
+        this.paymentDeadline = paymentDeadline;
+    }
+
 }
