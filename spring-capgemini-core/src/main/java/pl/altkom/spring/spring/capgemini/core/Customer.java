@@ -11,8 +11,5 @@ package pl.altkom.spring.spring.capgemini.core;
  * @author kursant12
  */
 public class Customer {
-    // TODO address
-    // TODO basket
-    private User user;
     
 }
