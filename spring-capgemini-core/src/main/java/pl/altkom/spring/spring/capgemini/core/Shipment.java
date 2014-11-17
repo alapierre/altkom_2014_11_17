@@ -10,7 +10,7 @@ import java.util.Date;
 
 /**
  *
- * @author kursant10
+ * @author Joanna
  */
 public class Shipment {
     private Date readyForShipmentDate;
