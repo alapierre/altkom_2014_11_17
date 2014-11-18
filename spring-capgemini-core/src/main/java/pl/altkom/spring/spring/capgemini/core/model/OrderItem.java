@@ -28,7 +28,7 @@ public class OrderItem extends BaseEntiy {
     int discount;
     
     // zamowiony produkt
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "product_id")
     Product product;
 
