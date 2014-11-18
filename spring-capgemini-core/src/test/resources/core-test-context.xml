@@ -19,10 +19,10 @@
     <!-- Placeholder config -->
     <context:property-placeholder location="classpath:test.properties" />
     <context:annotation-config/>
-    <context:component-scan base-package="pl.altkom.spring.spring.capgemini.core.dao.jpa"/>
+<!--    <context:component-scan base-package="pl.altkom.spring.spring.capgemini.core.dao.jpa"/>-->
 <!--    <context:component-scan base-package="pl.altkom.logistic.dao"/>-->
 	
-<!--    <jpa:repositories base-package="pl.altkom.logistic.dao.springdata"/>    -->
+    <jpa:repositories base-package="pl.altkom.spring.spring.capgemini.core.dao.springdata"/>    
         
     <!-- Data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">

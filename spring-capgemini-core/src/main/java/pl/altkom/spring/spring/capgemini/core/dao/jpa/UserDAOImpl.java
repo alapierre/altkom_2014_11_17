@@ -6,6 +6,7 @@
 
 package pl.altkom.spring.spring.capgemini.core.dao.jpa;
 
+import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
@@ -33,5 +34,14 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public void save(User user) {
         em.persist(user);
+    }
+    
+    @Override
+    public List<User> findByLogin(String loginName) {
+        
+        return em.createNamedQuery("User.findByLogin")
+                .setParameter("name", loginName)
+                .getResultList();
+        
     }
 }

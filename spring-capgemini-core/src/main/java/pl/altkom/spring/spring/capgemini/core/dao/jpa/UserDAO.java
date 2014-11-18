@@ -6,6 +6,7 @@
 
 package pl.altkom.spring.spring.capgemini.core.dao.jpa;
 
+import java.util.List;
 import pl.altkom.spring.spring.capgemini.core.model.User;
 
 /**
@@ -17,5 +18,7 @@ public interface UserDAO {
     User load(long id);
 
     void save(User user);
+
+    List<User> findByLogin(String loginName);
     
 }

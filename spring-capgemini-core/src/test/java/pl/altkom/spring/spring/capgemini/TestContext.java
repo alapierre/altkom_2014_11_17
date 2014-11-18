@@ -6,13 +6,14 @@
 
 package pl.altkom.spring.spring.capgemini;
 
+import java.util.List;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
 import org.springframework.test.context.transaction.TransactionConfiguration;
-import pl.altkom.spring.spring.capgemini.core.dao.jpa.UserDAO;
+import pl.altkom.spring.spring.capgemini.core.dao.springdata.UserDAO;
 import pl.altkom.spring.spring.capgemini.core.model.User;
 
 /**
@@ -30,7 +31,7 @@ public class TestContext extends AbstractTransactionalJUnit4SpringContextTests{
     public void test() {
         System.out.println("OK");
         
-        User res = userDAO.load(1);
+        User res = userDAO.findOne(5L);
         
         System.out.println(res);
         
@@ -47,6 +48,21 @@ public class TestContext extends AbstractTransactionalJUnit4SpringContextTests{
         
         
         System.out.println(u.getId());
+    }
+    
+    @Test
+    public void testFind() {
+        List<User> users = userDAO.findByLoginLikeIgnoreCase("ala");
+        
+        System.out.println(users);
+    
+    }
+    
+    @Test
+    public void testFindByActiveTrueOrderById() {
+        
+        System.out.println(userDAO.findByActiveTrue());
+        
     }
     
 }

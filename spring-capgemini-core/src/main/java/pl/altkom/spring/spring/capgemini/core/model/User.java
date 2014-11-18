@@ -8,6 +8,7 @@ package pl.altkom.spring.spring.capgemini.core.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;
@@ -19,6 +20,8 @@ import org.hibernate.validator.constraints.NotEmpty;
  */
 @Entity
 @Table(name = "users")
+//@NamedQuery(name = "User.findByLogin", 
+//        query = "select u from User u where u.login = :name")
 public class User extends BaseEntiy {
     
     @Size(max = 128)
@@ -89,4 +92,11 @@ public class User extends BaseEntiy {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    @Override
+    public String toString() {
+        return "User{" + "login=" + login + ", password=" + password + ", active=" + active + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", phone=" + phone + '}';
+    }
+    
+    
 }
