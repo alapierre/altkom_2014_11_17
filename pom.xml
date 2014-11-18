@@ -8,6 +8,7 @@
     <modules>
         <module>sample</module>
         <module>spring-capgemini-core</module>
+        <module>spring-aspect</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
