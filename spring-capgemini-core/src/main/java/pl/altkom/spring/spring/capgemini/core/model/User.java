@@ -6,17 +6,31 @@
 
 package pl.altkom.spring.spring.capgemini.core.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
+
 /**
  *
  * @author instruktor
  */
-public class User {
+@Entity
+@Table(name = "users")
+public class User extends BaseEntiy {
+    
+    @Size(max = 128)
+    @NotEmpty
     private String login;
+    @NotEmpty
+    @Size(max = 32)
     private String password;
     private boolean active;
-    private String role;
     private String firstName;
     private String lastName;
+    @Email
     private String email;
     private String phone;
 
@@ -58,14 +72,6 @@ public class User {
 
     public void setActive(boolean active) {
         this.active = active;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getFirstName() {
