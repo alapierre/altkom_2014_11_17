@@ -7,6 +7,7 @@
 package pl.altkom.spring.spring.capgemini.core.model;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
@@ -15,6 +16,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -25,15 +28,18 @@ import javax.persistence.Table;
 public class Order extends BaseEntiy{
     
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_id", nullable = false)
     private List<OrderItem> orderList = new ArrayList<>();
     @Embedded
     private Address adres;
 //    private Customer customer;
 //    private Invoice invoice;
-    @ManyToOne
+    @ManyToOne(optional = false)
     private User user;
 
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date orderDate;
+    
 //    private Shipment shipment;
 //    private List<Supplier> suplierList;
     public List<OrderItem> getOrderList() {
@@ -67,5 +73,15 @@ public class Order extends BaseEntiy{
         return "Order{" + "orderList=" + orderList + ", adres=" + adres + ", user=" + user + '}';
     }
 
+    public Date getOrderDate() {
+        return orderDate;
+    }
+
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
+
+    
+    
     
 }

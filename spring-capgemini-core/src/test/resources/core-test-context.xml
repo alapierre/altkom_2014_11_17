@@ -38,7 +38,7 @@
         <property name="packagesToScan" value="pl.altkom.spring.spring.capgemini.core.model" />
         <property name="jpaProperties">
             <props>
-                <!--                <prop key="hibernate.hbm2ddl.auto">create</prop>-->
+<!--                                <prop key="hibernate.hbm2ddl.auto">create</prop>-->
                 <prop key="hibernate.format_sql">true</prop>
             </props>
         </property>
