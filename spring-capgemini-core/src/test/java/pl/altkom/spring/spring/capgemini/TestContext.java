@@ -31,9 +31,9 @@ public class TestContext extends AbstractTransactionalJUnit4SpringContextTests{
     public void test() {
         System.out.println("OK");
         
-        User res = userDAO.findOne(5L);
+        //User res = userDAO.findOne(5L);
         
-        System.out.println(res);
+        //System.out.println(res);
         
     }
     

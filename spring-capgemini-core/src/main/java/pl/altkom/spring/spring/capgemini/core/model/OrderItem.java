@@ -6,12 +6,20 @@
 
 package pl.altkom.spring.spring.capgemini.core.model;
         
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+
 /**
  * Reprezentacja pojedynczego elementu zamówenia.
  * 
  * @author kursant4
  */
-public class OrderItem {
+@Entity
+public class OrderItem extends BaseEntiy {
     
     // ilosc zamowionych produktow
     int amount;
@@ -20,6 +28,8 @@ public class OrderItem {
     int discount;
     
     // zamowiony produkt
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "product_id")
     Product product;
 
     public int getAmount() {

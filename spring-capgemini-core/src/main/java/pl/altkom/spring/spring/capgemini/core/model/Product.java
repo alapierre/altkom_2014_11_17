@@ -7,33 +7,34 @@
 package pl.altkom.spring.spring.capgemini.core.model;
 
 import java.math.BigDecimal;
+import javax.persistence.Column;
+import javax.persistence.Entity;
 
 /**
  *
  * @author kursant6
  */
-public class Product {
+@Entity
+public class Product extends BaseEntiy {
     
-    private Long id;
+    
     private String name;
     private String color;
     private String substance;
+    @Column(precision=8, scale=2)
     private BigDecimal weightKg;
+    @Column(precision=8, scale=2)
     private BigDecimal widthCm;
+    @Column(precision=8, scale=2)
     private BigDecimal heightCm;
+    @Column(precision=8, scale=2)
     private BigDecimal lengthCm;
+    @Column(precision=8, scale=2)
     private BigDecimal cost;
+    @Column(precision=8, scale=2)
     private BigDecimal tax;
     private String currency;
-    private Supplier supplier;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    //private Supplier supplier;
 
     public String getName() {
         return name;
@@ -99,13 +100,13 @@ public class Product {
         this.cost = cost;
     }
 
-    public Supplier getSupplier() {
-        return supplier;
-    }
-
-    public void setSupplier(Supplier supplier) {
-        this.supplier = supplier;
-    }
+//    public Supplier getSupplier() {
+//        return supplier;
+//    }
+//
+//    public void setSupplier(Supplier supplier) {
+//        this.supplier = supplier;
+//    }
 
     public BigDecimal getTax() {
         return tax;
@@ -121,6 +122,11 @@ public class Product {
 
     public void setCurrency(String currency) {
         this.currency = currency;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" + "name=" + name + ", color=" + color + ", substance=" + substance + ", weightKg=" + weightKg + ", widthCm=" + widthCm + ", heightCm=" + heightCm + ", lengthCm=" + lengthCm + ", cost=" + cost + ", tax=" + tax + ", currency=" + currency + '}';
     }
     
 }

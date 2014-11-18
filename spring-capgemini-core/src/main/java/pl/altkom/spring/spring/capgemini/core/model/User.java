@@ -6,9 +6,7 @@
 
 package pl.altkom.spring.spring.capgemini.core.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
 import org.hibernate.validator.constraints.Email;

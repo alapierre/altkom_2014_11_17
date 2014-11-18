@@ -6,90 +6,66 @@
 
 package pl.altkom.spring.spring.capgemini.core.model;
 
+import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 /**
  *
  * @author kursant2
  */
-public class Order {
+@Entity
+@Table(name = "orders")
+public class Order extends BaseEntiy{
     
-    private List<OrderItem> orderList;
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "order_id")
+    private List<OrderItem> orderList = new ArrayList<>();
+    @Embedded
     private Address adres;
-    private Customer customer;
-    private Invoice invoice;
+//    private Customer customer;
+//    private Invoice invoice;
+    @ManyToOne
     private User user;
-    private Shipment shipment;
-    private List<Supplier> suplierList;
 
-    public void setInvoice(Invoice invoice) {
-        this.invoice = invoice;
-    }
-
-    public void addOrderItem(OrderItem item)
-    {
-        orderList.add(item);
-    }
-    
-    public void addSupplier(Supplier item)
-    {
-        suplierList.add(item);
+//    private Shipment shipment;
+//    private List<Supplier> suplierList;
+    public List<OrderItem> getOrderList() {
+        return orderList;
     }
 
     public void setOrderList(List<OrderItem> orderList) {
         this.orderList = orderList;
     }
 
-    public void setShipment(Shipment shipment) {
-        this.shipment = shipment;
-    }
+    
 
-    public void setSuplierList(List<Supplier> suplierList) {
-        this.suplierList = suplierList;
-    }
-    
-    
-    public void setUser(User user) {
-        this.user = user;
+    public Address getAdres() {
+        return adres;
     }
 
     public void setAdres(Address adres) {
         this.adres = adres;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public List<OrderItem> getOrderList() {
-        return orderList;
-    }
-
-    public Address getAdres() {
-        return adres;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public List<Supplier> getSuplierList() {
-        return suplierList;
-    }
-    
-        public User getUser() {
+    public User getUser() {
         return user;
     }
 
-    public Shipment getShipment() {
-        return shipment;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public Invoice getInvoice() {
-        return invoice;
+    @Override
+    public String toString() {
+        return "Order{" + "orderList=" + orderList + ", adres=" + adres + ", user=" + user + '}';
     }
-    
-    
-    
+
     
 }

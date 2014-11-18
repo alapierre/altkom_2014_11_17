@@ -6,11 +6,15 @@
 
 package pl.altkom.spring.spring.capgemini.core.model;
 
+import java.io.Serializable;
+import javax.persistence.Embeddable;
+
 /**
  *
  * @author kursant5
  */
-public class Address {
+@Embeddable
+public class Address implements Serializable{
     
     private String receiverName;
     private String street;
