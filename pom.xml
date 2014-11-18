@@ -9,7 +9,8 @@
         <module>sample</module>
         <module>spring-capgemini-core</module>
         <module>spring-aspect</module>
-    </modules>
+    <module>spring-capgemini-web</module>
+  </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.0.8.RELEASE</spring.version>
