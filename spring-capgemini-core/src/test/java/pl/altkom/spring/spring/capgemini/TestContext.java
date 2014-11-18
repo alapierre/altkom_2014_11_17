@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.TestExecutionListeners;
 import org.springframework.test.context.junit4.AbstractTransactionalJUnit4SpringContextTests;
+import org.springframework.test.context.transaction.TransactionConfiguration;
 import pl.altkom.spring.spring.capgemini.core.dao.jpa.UserDAO;
 import pl.altkom.spring.spring.capgemini.core.model.User;
 
@@ -19,6 +20,7 @@ import pl.altkom.spring.spring.capgemini.core.model.User;
  * @author instruktor
  */
 @ContextConfiguration("/core-test-context.xml")
+@TransactionConfiguration(defaultRollback = false)
 public class TestContext extends AbstractTransactionalJUnit4SpringContextTests{
     
     @Autowired
@@ -32,6 +34,19 @@ public class TestContext extends AbstractTransactionalJUnit4SpringContextTests{
         
         System.out.println(res);
         
+    }
+    
+    @Test
+    public void saveUserTest() {
+        
+        User u = new User();
+        u.setLogin("ala");
+        u.setPassword("alamakota");
+        
+        userDAO.save(u);
+        
+        
+        System.out.println(u.getId());
     }
     
 }
