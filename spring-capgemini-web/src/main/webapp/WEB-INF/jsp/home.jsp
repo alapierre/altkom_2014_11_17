@@ -14,6 +14,8 @@
     <body>
         <h1>Hello World!</h1>
         
-        ala ma kota a kot ma ale
+        Hallo ${name}!!!
+        <br>
+        masz lat: ${age}
     </body>
 </html>

@@ -6,6 +6,7 @@ package pl.altkom.spring.capgemini.web.controller;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -22,7 +23,11 @@ public class MyController {
         
         logger.debug("MyController.home()");
         
-        return new ModelAndView("home");
+        ModelAndView model = new ModelAndView("home");
+        
+        return model;
     }
+    
+    
     
 }
