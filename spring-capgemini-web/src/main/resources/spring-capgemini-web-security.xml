@@ -11,10 +11,16 @@
        	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
     	   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd
-           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+           http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd
            ">
 		
     <security:http>
+        
+        <security:headers>
+            <security:xss-protection />
+        </security:headers>
+        
+        <security:csrf/>
         <security:intercept-url pattern="/admin" access="ROLE_ADMIN" />
         <security:intercept-url pattern="/login" access="IS_AUTHENTICATED_ANONYMOUSLY" /> 
         <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN" />
