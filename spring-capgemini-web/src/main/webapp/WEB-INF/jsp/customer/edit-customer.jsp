@@ -26,11 +26,13 @@
         current: ${pageContext.response.locale}
         <hr>
         
+        
+        
         <h1>Edycja danych klienta </h1>
         
         ${customer.name}<br>
         
-        <form:form modelAttribute="customer" method="POST" action="/customer/save">
+        <form:form htmlEscape="true" modelAttribute="customer" method="POST" action="/customer/save">
             <spring:message var="customerName" code="customer.name"/>
             <spring:message code="customer.name"/>:<form:input htmlEscape="true" placeholder="${customerName}" path="name"/>
             <form:errors cssClass="error" path="name"/> <br>
