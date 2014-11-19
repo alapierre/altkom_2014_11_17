@@ -28,7 +28,8 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:spring-capgemini-web-security.xml          
+            classpath:spring-capgemini-web-security.xml,
+            classpath:spring-capgemini-web-core.xml          
         </param-value>
     </context-param>
     

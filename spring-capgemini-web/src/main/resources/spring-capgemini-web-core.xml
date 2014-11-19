@@ -27,22 +27,15 @@
     <!-- Placeholder config -->
     <context:property-placeholder location="classpath:system.properties" />
 
-    <jpa:repositories base-package="pl.altkom.spring.capgemini.web.dao"/>
-    	
-	<!-- aktywacja springowego cache
-	<cache:annotation-driven />
-	 -->
-     
-	 <!--ehcache:annotation-driven/-->
-
+    
     <!-- Data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="${jdbc.driver}" />
-        <property name="url" value="${jdbc.url}" />
-        <property name="username" value="${jdbc.username}" />
-        <property name="password" value="${jdbc.password}" />
+        <property name="driverClassName" value="${db.driver}" />
+        <property name="url" value="${db.url}" />
+        <property name="username" value="${db.username}" />
+        <property name="password" value="${db.password}" />
     </bean>
-
+<!--
     
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
         <property name="dataSource" ref="dataSource" />
@@ -59,7 +52,7 @@
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
         <property name="entityManagerFactory" ref="entityManagerFactory" />
-    </bean>
+    </bean>-->
    
     
     
