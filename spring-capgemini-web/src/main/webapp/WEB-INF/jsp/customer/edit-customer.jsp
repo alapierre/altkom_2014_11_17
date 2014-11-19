@@ -21,6 +21,11 @@
         </style>
     </head>
     <body>
+        <a href="<c:url value="/customer/add?locale=en"/>">[en]</a>
+        <a href="<c:url value="/customer/add?locale=pl"/>">[pl]</a>
+        current: ${pageContext.response.locale}
+        <hr>
+        
         <h1>Edycja danych klienta</h1>
         
         <form:form modelAttribute="customer" method="POST" action="/customer/save">
