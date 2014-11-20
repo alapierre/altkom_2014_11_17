@@ -32,10 +32,7 @@
         
         <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
             
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-        </dependency>
+        
                     
         <dependency>
             <groupId>org.apache.derby</groupId>
