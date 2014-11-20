@@ -26,7 +26,10 @@
 
     <!-- Placeholder config -->
     <context:property-placeholder location="classpath:system.properties" />
-
+    <context:component-scan base-package="pl.altkom.spring.spring.capgemini.core.service"/>
+    <jpa:repositories base-package="pl.altkom.spring.spring.capgemini.core.dao.springdata"/>    
+    
+    
     
     <!-- Data source -->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
