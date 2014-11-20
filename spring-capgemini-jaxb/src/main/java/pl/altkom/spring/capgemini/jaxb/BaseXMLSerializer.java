@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Copyright 2012-06-05 the original author or authors.
  */
 package pl.altkom.spring.capgemini.jaxb;
 
@@ -17,7 +15,7 @@ import org.xml.sax.SAXException;
 
 /**
  *
- * @author instruktor
+ * @author Adrian Lapierre <adrian@softproject.com.pl>
  */
 public class BaseXMLSerializer<T> {
 

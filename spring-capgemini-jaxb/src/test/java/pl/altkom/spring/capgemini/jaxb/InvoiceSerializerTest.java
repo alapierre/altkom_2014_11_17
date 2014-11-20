@@ -6,6 +6,7 @@
 
 package pl.altkom.spring.capgemini.jaxb;
 
+import java.io.File;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import pl.com.softproject.commons.model.invoice.Invoice;
@@ -16,7 +17,16 @@ import pl.com.softproject.commons.model.invoice.Invoice;
  */
 public class InvoiceSerializerTest {
     
-   
+   @Test
+   public void testParse() {
+ 
+       InvoiceSerializer serializer = new InvoiceSerializer();
+       
+       Invoice invoice = serializer.fromFile(new File("src/main/resources/FS 1_MAG_05_2012.xml"));
+       
+       System.out.println(serializer.toString(invoice));
+       
+   }
 
     @Test
     public void testCrateXML() {
