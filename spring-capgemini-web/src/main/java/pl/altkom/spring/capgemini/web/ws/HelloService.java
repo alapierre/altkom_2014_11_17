@@ -7,6 +7,7 @@ package pl.altkom.spring.capgemini.web.ws;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 import javax.jws.WebService;
+import pl.altkom.spring.spring.capgemini.core.model.Order;
 
 /**
  *
@@ -17,5 +18,7 @@ public interface HelloService {
 
     @WebMethod
     String sayHallo(@WebParam(name = "name") String name);
+
+    Order loadOrder(long id);
     
 }

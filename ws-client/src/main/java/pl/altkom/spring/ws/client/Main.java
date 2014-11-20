@@ -4,7 +4,9 @@
 
 package pl.altkom.spring.ws.client;
 
-import java.net.Authenticator;
+import java.net.MalformedURLException;
+import java.net.URL;
+import javax.xml.namespace.QName;
 import pl.altkom.spring.capgemini.web.ws.HelloServiceImplService;
 
 /**
@@ -13,7 +15,7 @@ import pl.altkom.spring.capgemini.web.ws.HelloServiceImplService;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
         
         WSAuthenticator auth = new WSAuthenticator();
         auth.setUsername("user");
@@ -21,7 +23,12 @@ public class Main {
         
         auth.init();
         
-        HelloServiceImplService srv = new HelloServiceImplService(); 
+        QName qName = new QName("http://ws.web.capgemini.spring.altkom.pl/", 
+                "HelloServiceImplService");
+        
+        HelloServiceImplService srv = new HelloServiceImplService(
+                new URL("http://10.12.11.60:8084/spring-capgemini-web/services/HelloWorld")
+                , qName); 
         
         String res = srv.getHelloServiceImplPort().sayHallo("Alicja");
         
