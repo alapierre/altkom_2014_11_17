@@ -10,7 +10,8 @@
         <module>spring-capgemini-core</module>
         <module>spring-aspect</module>
     <module>spring-capgemini-web</module>
-  </modules>
+        <module>spring-capgemini-jaxb</module>
+    </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.0.8.RELEASE</spring.version>
@@ -19,6 +20,14 @@
         <maven.compiler.target>1.7</maven.compiler.target>
         <hibernate.version>4.3.5.Final</hibernate.version>
     </properties>
+    
+    <dependencies>
+        <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-log4j12</artifactId>
+                <version>1.7.2</version>
+            </dependency>
+    </dependencies>
     
     <dependencyManagement>
         <dependencies>
@@ -53,11 +62,7 @@
                 <version>1.7.2</version>
             </dependency>    
             
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.2</version>
-            </dependency>
+            
                     
             <dependency>
                 <groupId>org.apache.derby</groupId>
