@@ -11,6 +11,18 @@
     </session-config>
     
     <servlet>
+        <description>Apache CXF Endpoint</description>
+        <display-name>cxf</display-name>
+        <servlet-name>cxf</servlet-name>
+        <servlet-class>org.apache.cxf.transport.servlet.CXFServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cxf</servlet-name>
+        <url-pattern>/services/*</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
         <servlet-name>spring-capgemini-web</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -18,7 +30,7 @@
 
     <servlet-mapping>
         <servlet-name>spring-capgemini-web</servlet-name>
-        <url-pattern>/</url-pattern>
+        <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
     
     <listener>
@@ -29,7 +41,8 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             classpath:spring-capgemini-web-security.xml,
-            classpath:spring-capgemini-web-core.xml          
+            classpath:spring-capgemini-web-core.xml,
+            classpath:spring-capgemini-ws.xml          
         </param-value>
     </context-param>
     
@@ -67,14 +80,14 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
     
-    <filter>
+<!--    <filter>
         <filter-name>springSecurityFilterChain</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
     <filter-mapping>
         <filter-name>springSecurityFilterChain</filter-name>
         <url-pattern>/*</url-pattern>                
-    </filter-mapping>
+    </filter-mapping>-->
     
 <!--    <error-page>
         <exception-type>java.lang.Throwable</exception-type>
