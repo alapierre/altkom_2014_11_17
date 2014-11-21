@@ -13,6 +13,7 @@
         <module>spring-capgemini-jaxb</module>
         <module>ws-client</module>
         <module>spring-jms</module>
+        <module>spring-jmx</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

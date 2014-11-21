@@ -30,6 +30,7 @@ public class SenderMain {
             @Override
             public Message createMessage(Session sn) throws JMSException {
                  TextMessage message = sn.createTextMessage("ala ma kota");
+                 
                  return message;
             }
         });
