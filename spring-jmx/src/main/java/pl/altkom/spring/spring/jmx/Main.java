@@ -4,6 +4,9 @@
 
 package pl.altkom.spring.spring.jmx;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -13,11 +16,13 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Main {
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         
         ApplicationContext ctx = 
                 new ClassPathXmlApplicationContext("spring-context.xml");
         
+         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        br.readLine();
     }
     
 }
