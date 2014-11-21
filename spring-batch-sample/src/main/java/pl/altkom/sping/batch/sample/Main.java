@@ -21,8 +21,6 @@ public class Main {
     
     public static void main(String[] args) {
         
-        System.out.println(Marshaller.JAXB_FORMATTED_OUTPUT);
-        
         String[] springConfig  = 
 		{	
 			"batch-task.xml" 
