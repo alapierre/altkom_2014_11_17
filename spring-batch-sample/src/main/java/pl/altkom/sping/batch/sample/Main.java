@@ -23,14 +23,14 @@ public class Main {
         
         String[] springConfig  = 
 		{	
-			"batch-task.xml" 
+			"batch-task_FL_insurance_sample.xml" 
 		};
  
 	ApplicationContext context = 
 			new ClassPathXmlApplicationContext(springConfig);
         
         JobLauncher jobLauncher = (JobLauncher) context.getBean("jobLauncher");
-	Job job = (Job) context.getBean("helloWorldJob");
+	Job job = (Job) context.getBean("importInsurance");
  
 	try {
  
